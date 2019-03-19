@@ -4,13 +4,6 @@ import { connect } from 'react-redux';
 import { url } from '../../apiURL';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state={
-      movies: []
-
-    }
-  }
 
   componentDidMount() {
     this.fetchNowPlaying(url)
@@ -20,13 +13,23 @@ class App extends Component {
     const response = await fetch(url);
     const data = await response.json();
     const movies = data.results;
-    const cleanedMovies = this.cleanMovies(movies)
-    this.props.addMovies(cleanedMovies)
+    const cleanedMovies = this.cleanMovies(movies);
+    this.props.addMovies(cleanedMovies);
   }
 
-  cleanMovies = () => {
-    
+  cleanMovies = (movies) => {
+    const newArray = movies.map(movie => {
+      return {
+        id: movie.id, 
+        release_date: movie.release_date, 
+        poster_path: movie.poster_path, 
+        title: movie.title, 
+        vote_average: movie.vote_average
+      }
+    })
+    return newArray
   }
+
 
   render() {
     return (
