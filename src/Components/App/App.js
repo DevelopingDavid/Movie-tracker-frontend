@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
+import { addMovies } from '../../actions';
+import { connect } from 'react-redux';
 import { url } from '../../apiURL';
 
-export default class App extends Component {
+class App extends Component {
+  constructor() {
+    super();
+    this.state={
+      movies: []
+
+    }
+  }
 
   componentDidMount() {
-    this.fetchNowPlaying(url);
+    this.fetchNowPlaying(url)
   }
 
   fetchNowPlaying = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
     const movies = data.results;
-    console.log(movies)
-    // assign movies to store
+    const cleanedMovies = this.cleanMovies(movies)
+    this.props.addMovies(cleanedMovies)
+  }
+
+  cleanMovies = () => {
+    
   }
 
   render() {
@@ -23,3 +36,9 @@ export default class App extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  addMovies: (movies) => dispatch(addMovies(movies))
+})
+
+export default connect (null, mapDispatchToProps)(App);

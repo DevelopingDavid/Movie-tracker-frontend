@@ -2,8 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './Main.scss';
 import App from './Components/App/App';
-import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { rootReducer } from './reducers/index';
+import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+)
 
-serviceWorker.unregister();
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <App /> 
+    </BrowserRouter>
+  </Provider>,
+    document.getElementById('root')
+);
