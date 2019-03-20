@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { addMovies } from '../../actions';
 import { connect } from 'react-redux';
 import { url } from '../../apiURL';
-
+import MovieContainer from '../MovieContainer/MovieContainer';
 export class App extends Component {
 
   componentDidMount() {
@@ -21,10 +21,10 @@ export class App extends Component {
     const newArray = movies.map(movie => {
       return {
         id: movie.id, 
-        release_date: movie.release_date, 
-        poster_path: movie.poster_path, 
+        releaseDate: movie.release_date, 
+        img: movie.poster_path, 
         title: movie.title, 
-        vote_average: movie.vote_average
+        rating: movie.vote_average
       }
     });
     return newArray;
@@ -34,6 +34,7 @@ export class App extends Component {
     return (
       <div className="App">
         <h1>Movie Tracker</h1>
+        <MovieContainer/>
       </div>
     );
   }
@@ -43,4 +44,4 @@ export const mapDispatchToProps = (dispatch) => ({
   addMovies: (movies) => dispatch(addMovies(movies))
 });
 
-export default connect (null, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
