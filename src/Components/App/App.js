@@ -3,7 +3,7 @@ import { addMovies } from '../../actions';
 import { connect } from 'react-redux';
 import { url } from '../../apiURL';
 
-class App extends Component {
+export class App extends Component {
 
   componentDidMount() {
     this.fetchNowPlaying(url)
@@ -26,10 +26,9 @@ class App extends Component {
         title: movie.title, 
         vote_average: movie.vote_average
       }
-    })
-    return newArray
+    });
+    return newArray;
   }
-
 
   render() {
     return (
@@ -40,8 +39,8 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   addMovies: (movies) => dispatch(addMovies(movies))
-})
+});
 
 export default connect (null, mapDispatchToProps)(App);
