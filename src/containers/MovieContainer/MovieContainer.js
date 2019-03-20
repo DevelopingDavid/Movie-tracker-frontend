@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Card from '../Card/Card';
+import Card from '../../Components/Card/Card';
 
-const MovieContainer = (props) => {
+export const MovieContainer = (props) => {
   const movieCards = props.movies.map(movie => {
     return <Card cardInfo={movie} key={movie.id}/> 
   });
@@ -13,7 +13,7 @@ const MovieContainer = (props) => {
   )
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   movies: state.movies
 });
 
