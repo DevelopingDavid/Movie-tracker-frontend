@@ -4,7 +4,7 @@ const Card = (props) => {
   return (
     <article className="tile">
       <div className="tile__media">
-        <img className="tile__img" src={`https://image.tmdb.org/t/p/w500/${props.cardInfo.img}`}/>
+        <img className="tile__img" src={`https://image.tmdb.org/t/p/w500/${props.cardInfo.img}`} alt="movie-poster"/>
       </div>
       <div className="tile__details">
         <div className="tile__title">

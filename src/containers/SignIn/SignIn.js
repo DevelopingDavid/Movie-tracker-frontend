@@ -34,10 +34,14 @@ export class SignIn extends Component {
 
   validateUser = async (e) => {
     e.preventDefault()
+    
     const user = await this.fetchUsers();
+    // console.log(user);
+    
       if(typeof user === 'object') {
-        console.log(this.props.loginUser)
-        // this.props.loginUser(true)
+        // console.log('validate user entered', this.props);
+        
+        this.props.loginUser(true);
       } else {
         this.setState({ error: user });
       }
@@ -45,29 +49,21 @@ export class SignIn extends Component {
 
   saveInput = (event) => {
     event.preventDefault();
-    if (event.target.name === 'password') {
-      this.setState({
-        password: event.target.value
-      });
-    } else if (event.target.name === 'email') {
-      this.setState({
-        email: event.target.value
-      })
-    
-    } else if(event.target.name === 'name') {
-      this.setState({
-        name: event.target.value
-      })
-    } ;
+    const {name, value} = event.target;
+    this.setState({
+      [name]: value
+    })
   }
 
   render() {
+
+    
     return (
       <div>
         Sign-In Form
-        <form className='sign-in' onChange={this.saveInput} onSubmit={this.validateUser}>
-          <input type='email' name='email' value={this.state.email} placeholder='email@example.com'/>
-          <input type='password' name='password' value={this.state.password} placeholder='password'/>
+        <form className='sign-in' onSubmit={this.validateUser}>
+          <input type='email' name='email' value={this.state.email} placeholder='email@example.com' onChange={this.saveInput}/>
+          <input type='password' name='password' value={this.state.password} placeholder='password' onChange={this.saveInput}/>
           <input type='submit'/>
         </form>
         <NavLink to='/sign-up'>Sign Up</NavLink>
@@ -77,7 +73,7 @@ export class SignIn extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   loginUser: (loggedIn) => dispatch(loginUser(loggedIn))
 });
 

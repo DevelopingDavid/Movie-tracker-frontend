@@ -4,5 +4,5 @@ import { loginUserReducer } from './loginUserReducer';
 
 export const rootReducer = combineReducers ({
   movies: moviesReducer,
-  loggedIn: loginUserReducer
+  loginUser: loginUserReducer
 });
