@@ -3,7 +3,9 @@ import { addMovies } from '../../actions';
 import { connect } from 'react-redux';
 import { url } from '../../apiURL';
 import MovieContainer from '../../containers/MovieContainer/MovieContainer';
-import Form from '../Form/Form';
+import { Redirect, Route } from 'react-router-dom';
+import { SignIn } from '../SignIn/SignIn';
+import SignUp from '../SignUp/SignUp';
 
 export class App extends Component {
 
@@ -33,11 +35,16 @@ export class App extends Component {
   }
 
   render() {
+    if ( this.props.loggedIn ) {
+      return (<Redirect to='/movies' />)
+    }
     return (
       <div className="App">
         <h1>Movie Tracker</h1>
-        <Form />
-        <MovieContainer/>
+        <Route exact path='/' component={SignIn} />
+        <Route exact path='/sign-in' component={SignIn} />
+        <Route exact path='/sign-up' component={SignUp} />
+        <Route exact path='/movies' component={MovieContainer} />
       </div>
     );
   }

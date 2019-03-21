@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { loginUser } from '../../actions';
 
-class Form extends Component {
+export class SignIn extends Component {
   constructor() {
     super();
     this.state = {
       email: '',
       password: '',
-      name: '',
       error: ''
     }
   }
@@ -23,8 +25,8 @@ class Form extends Component {
     const userDatabase = 'http://localhost:3000/api/users';
     const response = await fetch(userDatabase, options);
     if(response.ok) {
-      const users = await response.json();
-      return users.data
+      const user = await response.json();
+      return user.data
     } else {
       return 'Incorrect email/password combination'
     }
@@ -34,7 +36,8 @@ class Form extends Component {
     e.preventDefault()
     const user = await this.fetchUsers();
       if(typeof user === 'object') {
-        // conditional rendering for displaying movies
+        console.log(this.props.loginUser)
+        // this.props.loginUser(true)
       } else {
         this.setState({ error: user });
       }
@@ -58,22 +61,6 @@ class Form extends Component {
     } ;
   }
 
-  addUserToDatabase = async (event) => {
-    event.preventDefault();
-    const userInfo = this.state;
-    const options = {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(userInfo)
-    }
-    const userDatabase = 'http://localhost:3000/api/users/new';
-    const response = await fetch(userDatabase, options);
-    const data = await response.json();
-    console.log(data)
-  }
-
   render() {
     return (
       <div>
@@ -83,17 +70,15 @@ class Form extends Component {
           <input type='password' name='password' value={this.state.password} placeholder='password'/>
           <input type='submit'/>
         </form>
+        <NavLink to='/sign-up'>Sign Up</NavLink>
         { this.state.error && this.state.error } 
-        Sign-up Form
-        <form className='sign-up' onChange={this.saveInput} onSubmit={this.addUserToDatabase}>
-          <input name='name' type='text' placeholder='Name'/>
-          <input name='email' type='email' placeholder='email@example.com'/>
-          <input name='password' type='password' placeholder='password'/>
-          <input type='submit'/>
-        </form>
       </div>
     )
   }
 }
 
-export default Form;
+const mapDispatchToProps = (dispatch) => ({
+  loginUser: (loggedIn) => dispatch(loginUser(loggedIn))
+});
+
+export default connect(null, mapDispatchToProps)(SignIn);
