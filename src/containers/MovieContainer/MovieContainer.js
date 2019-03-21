@@ -7,8 +7,12 @@ export const MovieContainer = (props) => {
     return <Card cardInfo={movie} key={movie.id}/> 
   });
   return (
-    <section>
-      {movieCards}
+    <section className="movies-container">
+      <div className="row">
+        <div className="row__inner">
+          {movieCards}
+        </div>
+      </div>
     </section>
   )
 };

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { addMovies } from '../../actions';
 import { connect } from 'react-redux';
 import { url } from '../../apiURL';
-import MovieContainer from '../MovieContainer/MovieContainer';
+import MovieContainer from '../../containers/MovieContainer/MovieContainer';
 export class App extends Component {
 
   componentDidMount() {
