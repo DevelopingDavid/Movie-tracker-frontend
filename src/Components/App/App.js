@@ -3,6 +3,8 @@ import { addMovies } from '../../actions';
 import { connect } from 'react-redux';
 import { url } from '../../apiURL';
 import MovieContainer from '../../containers/MovieContainer/MovieContainer';
+import Form from '../Form/Form';
+
 export class App extends Component {
 
   componentDidMount() {
@@ -34,6 +36,7 @@ export class App extends Component {
     return (
       <div className="App">
         <h1>Movie Tracker</h1>
+        <Form />
         <MovieContainer/>
       </div>
     );
