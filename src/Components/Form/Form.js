@@ -6,6 +6,7 @@ class Form extends Component {
     this.state = {
       email: '',
       password: '',
+      name: '',
       error: ''
     }
   }
@@ -23,10 +24,8 @@ class Form extends Component {
     const response = await fetch(userDatabase, options);
     if(response.ok) {
       const users = await response.json();
-      // console.log('correct')
       return users.data
     } else {
-      // console.log('failed')
       return 'Incorrect email/password combination'
     }
   }
@@ -34,13 +33,10 @@ class Form extends Component {
   validateUser = async (e) => {
     e.preventDefault()
     const user = await this.fetchUsers();
-    console.log(user)
       if(typeof user === 'object') {
-        console.log('object')
+        // conditional rendering for displaying movies
       } else {
-        this.setState({
-          error: user
-        })
+        this.setState({ error: user });
       }
   }
 
@@ -49,12 +45,33 @@ class Form extends Component {
     if (event.target.name === 'password') {
       this.setState({
         password: event.target.value
-      })
+      });
     } else if (event.target.name === 'email') {
       this.setState({
         email: event.target.value
       })
+    
+    } else if(event.target.name === 'name') {
+      this.setState({
+        name: event.target.value
+      })
+    } ;
+  }
+
+  addUserToDatabase = async (event) => {
+    event.preventDefault();
+    const userInfo = this.state;
+    const options = {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userInfo)
     }
+    const userDatabase = 'http://localhost:3000/api/users/new';
+    const response = await fetch(userDatabase, options);
+    const data = await response.json();
+    console.log(data)
   }
 
   render() {
@@ -68,10 +85,10 @@ class Form extends Component {
         </form>
         { this.state.error && this.state.error } 
         Sign-up Form
-        <form className='sign-up'>
-          <input type='text' placeholder='Name'/>
-          <input type='email' placeholder='email@example.com'/>
-          <input type='password' placeholder='password'/>
+        <form className='sign-up' onChange={this.saveInput} onSubmit={this.addUserToDatabase}>
+          <input name='name' type='text' placeholder='Name'/>
+          <input name='email' type='email' placeholder='email@example.com'/>
+          <input name='password' type='password' placeholder='password'/>
           <input type='submit'/>
         </form>
       </div>
