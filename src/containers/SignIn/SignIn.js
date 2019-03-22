@@ -34,17 +34,12 @@ export class SignIn extends Component {
 
   validateUser = async (e) => {
     e.preventDefault()
-    
     const user = await this.fetchUsers();
-    // console.log(user);
-    
-      if(typeof user === 'object') {
-        // console.log('validate user entered', this.props);
-        
-        this.props.loginUser(true);
-      } else {
-        this.setState({ error: user });
-      }
+    if(typeof user === 'object') {     
+      this.props.loginUser(true);
+    } else {
+      this.setState({ error: user });
+    }
   }
 
   saveInput = (event) => {
@@ -52,22 +47,31 @@ export class SignIn extends Component {
     const {name, value} = event.target;
     this.setState({
       [name]: value
-    })
+    });
   }
 
   render() {
 
     
     return (
-      <div>
-        Sign-In Form
-        <form className='sign-in' onSubmit={this.validateUser}>
-          <input type='email' name='email' value={this.state.email} placeholder='email@example.com' onChange={this.saveInput}/>
-          <input type='password' name='password' value={this.state.password} placeholder='password' onChange={this.saveInput}/>
-          <input type='submit'/>
-        </form>
-        <NavLink to='/sign-up'>Sign Up</NavLink>
-        { this.state.error && this.state.error } 
+      <div className='sign-in-container'>
+        <section>
+          <form className='sign-in' onSubmit={this.validateUser}>
+            <div>
+              <label>Email</label>
+              <i className="fas fa-envelope"></i>
+            </div>
+            <input type='email' name='email' value={this.state.email} placeholder='email@example.com' onChange={this.saveInput} autoComplete="off"/>
+            <div>
+              <label>Password</label>
+              <i className="fas fa-lock"></i>
+            </div>
+            <input type='password' name='password' value={this.state.password} placeholder='password' onChange={this.saveInput} autoComplete="off"/>
+            <input type='submit'/>
+          </form>
+          <NavLink className='sign-up' to='/sign-up'>Sign Up</NavLink>
+          { this.state.error && this.state.error } 
+        </section>
       </div>
     )
   }

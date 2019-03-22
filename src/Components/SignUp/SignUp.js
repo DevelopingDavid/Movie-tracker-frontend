@@ -29,33 +29,33 @@ class SignUp extends Component {
 
   saveInput = (event) => {
     event.preventDefault();
-    if (event.target.name === 'password') {
-      this.setState({
-        password: event.target.value
-      });
-    } else if (event.target.name === 'email') {
-      this.setState({
-        email: event.target.value
-      })
-    
-    } else if(event.target.name === 'name') {
-      this.setState({
-        name: event.target.value
-      })
-    } ;
+    const {name, value} = event.target;
+    this.setState({
+      [name]: value
+    });
   }
 
   render() {
     return(
       <div>
-        Sign-up Form
         <form className='sign-up' onChange={this.saveInput} onSubmit={this.addUserToDatabase}>
-          <input name='name' type='text' placeholder='Name'/>
-          <input name='email' type='email' placeholder='email@example.com'/>
-          <input name='password' type='password' placeholder='password'/>
+          <div>
+            <label>Email</label>
+            <i className="fas fa-user"></i>
+          </div>
+          <input name='name' type='text' placeholder='Name' autoComplete="off"/>
+          <div>
+            <label>Email</label>
+            <i className="fas fa-envelope"></i>            
+          </div>
+          <input name='email' type='email' placeholder='email@example.com' autoComplete="off"/>
+          <div>
+            <label>Password</label>
+            <i className="fas fa-lock"></i>          
+          </div>
+          <input name='password' type='password' placeholder='password' autoComplete="off"/>
           <input type='submit'/>
         </form>
-  
         <NavLink to='/sign-in'>Already have an account? Sign in</NavLink>        
       </div>
     )
