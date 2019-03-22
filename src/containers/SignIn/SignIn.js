@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions';
 
@@ -35,8 +35,8 @@ export class SignIn extends Component {
   validateUser = async (e) => {
     e.preventDefault()
     const user = await this.fetchUsers();
-    if(typeof user === 'object') {     
-      this.props.loginUser(true);
+    if(typeof user === 'object') {
+      this.props.loginUser(user.id, user.name);
     } else {
       this.setState({ error: user });
     }
@@ -51,8 +51,9 @@ export class SignIn extends Component {
   }
 
   render() {
-
-    
+    if(Object.keys(this.props.user).length > 1) { 
+      return <Redirect to='/movies'/>
+    }
     return (
       <div className='sign-in-container'>
         <section>
@@ -70,7 +71,9 @@ export class SignIn extends Component {
             <input type='submit'/>
           </form>
           <NavLink className='sign-up-btn' to='/sign-up'>Sign Up</NavLink>
-          { this.state.error && this.state.error } 
+          <div>
+            { this.state.error && this.state.error } 
+          </div>
         </section>
       </div>
     )
@@ -78,7 +81,11 @@ export class SignIn extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  loginUser: (loggedIn) => dispatch(loginUser(loggedIn))
+  loginUser: (id, name) => dispatch(loginUser(id, name))
 });
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export const mapStateToProps = (state) => ({
+  user: state.loginUser
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

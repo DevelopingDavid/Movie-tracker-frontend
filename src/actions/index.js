@@ -3,7 +3,8 @@ export const addMovies = (movies) => ({
   movies,
 });
 
-export const loginUser = (loggedIn) => ({
+export const loginUser = (id, name) => ({
   type: 'LOGIN_USER',
-  loggedIn
+  id,
+  name
 });

@@ -24,7 +24,12 @@ class SignUp extends Component {
     }
     const userDatabase = 'http://localhost:3000/api/users/new';
     const response = await fetch(userDatabase, options);
-    const data = await response.json();
+    if(response.ok) {
+      const data = await response.json();
+      return data;
+    } else {
+      return 'Please fill out form'
+    }
   }
 
   saveInput = (event) => {
@@ -41,7 +46,7 @@ class SignUp extends Component {
         <section>
           <form className='sign-up-form' onChange={this.saveInput} onSubmit={this.addUserToDatabase}>
             <div>
-              <label>Email</label>
+              <label>Name</label>
               <i className="fas fa-user"></i>
             </div>
             <input name='name' type='text' placeholder='Name' autoComplete="off"/>
