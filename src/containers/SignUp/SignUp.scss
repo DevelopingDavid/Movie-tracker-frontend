@@ -1,3 +1,49 @@
+.sign-up-container {
+  background: url('./images/marvel-sign.jpg') center no-repeat;
+  background-size: cover; 
+  height: 100vh;
+  background-color: rgba(163, 163, 163, 0.815);
+  background-blend-mode: multiply;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  section {
+    height: 80%;
+    background-color: #0e0f11;
+    width: 50%;
+    color: white;
+    border-radius: 1.7rem;
+    font-family: sans-serif;
+    font-size: 2rem;
+    border: solid 3px #940002;
+  }
+  form {
+    margin: 100px 100px 0 100px;
+  }
+  input {
+    margin: 20px 0;
+    border: none;
+    border-bottom: solid 2px white;
+    background: none;
+    font-size: 2rem;
+    width: 100%;
+    outline: none;
+    padding-bottom: 5px;
+  }
+  label {
+    margin-right: 14px;
+  }
+  input[type='email'] {
+    color: white;
+  }
+  input[type='password'] {
+    color: white;
+  }
+  input[type='submit'] {
+    background: white;
+  }
+}
+
 .sign-in-container {
   background: url('./images/marvel-sign.jpg') center no-repeat;
   background-size: cover; 
@@ -45,13 +91,13 @@
 }
 
 
-.sign-in-form {
+.sign-up-form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.sign-up-btn {
+.sign-in-btn {
   // margin: auto;
   margin-top: 50px;
   color: white;

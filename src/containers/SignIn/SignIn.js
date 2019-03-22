@@ -56,7 +56,7 @@ export class SignIn extends Component {
     return (
       <div className='sign-in-container'>
         <section>
-          <form className='sign-in' onSubmit={this.validateUser}>
+          <form className='sign-in-form' onSubmit={this.validateUser}>
             <div>
               <label>Email</label>
               <i className="fas fa-envelope"></i>
@@ -69,7 +69,7 @@ export class SignIn extends Component {
             <input type='password' name='password' value={this.state.password} placeholder='password' onChange={this.saveInput} autoComplete="off"/>
             <input type='submit'/>
           </form>
-          <NavLink className='sign-up' to='/sign-up'>Sign Up</NavLink>
+          <NavLink className='sign-up-btn' to='/sign-up'>Sign Up</NavLink>
           { this.state.error && this.state.error } 
         </section>
       </div>
