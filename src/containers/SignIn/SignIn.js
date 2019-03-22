@@ -54,6 +54,7 @@ export class SignIn extends Component {
     if(Object.keys(this.props.user).length > 1) { 
       return <Redirect to='/movies'/>
     }
+    
     return (
       <div className='sign-in-container'>
         <section>
