@@ -26,11 +26,12 @@ export class App extends Component {
   cleanMovies = (movies) => {
     const newArray = movies.map(movie => {
       return {
-        id: movie.id, 
-        releaseDate: movie.release_date, 
-        img: movie.poster_path, 
+        movie_id: movie.id, 
         title: movie.title, 
-        rating: movie.vote_average
+        poster_path: movie.poster_path, 
+        release_date: movie.release_date, 
+        vote_average: movie.vote_average,
+        overview: movie.overview
       }
     });
     return newArray;
@@ -48,7 +49,7 @@ export class App extends Component {
         <Route exact path='/movieInfo/:id' render={({match}) => {
           const { id } = match.params
           const foundMovie = this.props.movies.find((movie) => {
-            return id == movie.id
+            return id == movie.movie_id
           })
           if (foundMovie) {
             return <MoviePopup foundMovie={foundMovie}/>
