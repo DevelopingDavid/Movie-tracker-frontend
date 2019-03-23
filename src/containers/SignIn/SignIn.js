@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions';
 
@@ -34,17 +34,13 @@ export class SignIn extends Component {
 
   validateUser = async (e) => {
     e.preventDefault()
-    
     const user = await this.fetchUsers();
-    // console.log(user);
-    
-      if(typeof user === 'object') {
-        // console.log('validate user entered', this.props);
-        
-        this.props.loginUser(true);
-      } else {
-        this.setState({ error: user });
-      }
+    if(typeof user === 'object') {
+      this.props.loginUser(user.id, user.name);
+      localStorage.setItem('movieTrackerUser', JSON.stringify(this.props.user))
+    } else {
+      this.setState({ error: user });
+    }
   }
 
   saveInput = (event) => {
@@ -52,29 +48,46 @@ export class SignIn extends Component {
     const {name, value} = event.target;
     this.setState({
       [name]: value
-    })
+    });
   }
 
   render() {
-
+    if(Object.keys(this.props.user).length > 1) { 
+      return <Redirect to='/movies'/>
+    }
     
     return (
-      <div>
-        Sign-In Form
-        <form className='sign-in' onSubmit={this.validateUser}>
-          <input type='email' name='email' value={this.state.email} placeholder='email@example.com' onChange={this.saveInput}/>
-          <input type='password' name='password' value={this.state.password} placeholder='password' onChange={this.saveInput}/>
-          <input type='submit'/>
-        </form>
-        <NavLink to='/sign-up'>Sign Up</NavLink>
-        { this.state.error && this.state.error } 
+      <div className='sign-in-container'>
+        <section>
+          <form className='sign-in-form' onSubmit={this.validateUser}>
+            <div>
+              <label>Email</label>
+              <i className="fas fa-envelope"></i>
+            </div>
+            <input type='email' name='email' value={this.state.email} placeholder='email@example.com' onChange={this.saveInput} autoComplete="off"/>
+            <div>
+              <label>Password</label>
+              <i className="fas fa-lock"></i>
+            </div>
+            <input type='password' name='password' value={this.state.password} placeholder='password' onChange={this.saveInput} autoComplete="off"/>
+            <input type='submit'/>
+          </form>
+          <NavLink className='sign-up-btn' to='/sign-up'>Sign Up</NavLink>
+          <div>
+            { this.state.error && this.state.error } 
+          </div>
+        </section>
       </div>
     )
   }
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  loginUser: (loggedIn) => dispatch(loginUser(loggedIn))
+  loginUser: (id, name) => dispatch(loginUser(id, name))
 });
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export const mapStateToProps = (state) => ({
+  user: state.loginUser
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

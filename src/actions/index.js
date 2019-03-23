@@ -1,9 +1,10 @@
 export const addMovies = (movies) => ({
   type: 'ADD_MOVIES',
   movies,
-})
+});
 
-export const loginUser = (loggedIn) => ({
+export const loginUser = (id, name) => ({
   type: 'LOGIN_USER',
-  loggedIn
-})
+  id,
+  name
+});
