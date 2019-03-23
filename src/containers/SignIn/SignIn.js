@@ -37,6 +37,7 @@ export class SignIn extends Component {
     const user = await this.fetchUsers();
     if(typeof user === 'object') {
       this.props.loginUser(user.id, user.name);
+      localStorage.setItem('movieTrackerUser', JSON.stringify(this.props.user))
     } else {
       this.setState({ error: user });
     }
