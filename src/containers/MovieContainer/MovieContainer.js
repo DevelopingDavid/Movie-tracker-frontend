@@ -38,7 +38,7 @@ export const MovieContainer = (props) => {
 
 export const mapStateToProps = (state) => ({
   movies: state.movies,
-  user: state.loginUser
+  user: state.user
 });
 
 export const mapDispatchToProps = (dispatch) => ({

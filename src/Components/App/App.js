@@ -7,6 +7,7 @@ import { Route } from 'react-router-dom';
 import SignIn from '../../containers/SignIn/SignIn';
 import SignUp from '../../containers/SignUp/SignUp';
 import Header from '../Header/Header';
+import MoviePopup from '../MoviePopup/MoviePopup';
 
 export class App extends Component {
 
@@ -36,6 +37,7 @@ export class App extends Component {
   }
 
   render() {
+    console.log('rerender')
     return (
       <div className="App">
         <Header />
@@ -43,13 +45,30 @@ export class App extends Component {
         <Route exact path='/sign-in' component={SignIn} />
         <Route exact path='/sign-up' component={SignUp} />
         <Route exact path='/movies' component={MovieContainer} />
+        <Route exact path={`/${this.props.user.id}/favorites`} />
+        <Route exact path='/movieInfo/:id' render={({match}) => {
+          const { id } = match.params
+          console.log('inception route')
+          const foundMovie = this.props.movies.find((movie) => {
+            return id == movie.id
+          })
+          if (foundMovie) {
+            return <MoviePopup foundMovie={foundMovie}/>
+          }
+        }} />
+        
       </div>
     );
   }
 }
 
+export const mapStateToProps = (state) => ({
+  user: state.user,
+  movies: state.movies
+})
+
 export const mapDispatchToProps = (dispatch) => ({
   addMovies: (movies) => dispatch(addMovies(movies))
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
