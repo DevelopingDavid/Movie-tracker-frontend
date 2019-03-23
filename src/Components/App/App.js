@@ -6,6 +6,7 @@ import MovieContainer from '../../containers/MovieContainer/MovieContainer';
 import { Route } from 'react-router-dom';
 import SignIn from '../../containers/SignIn/SignIn';
 import SignUp from '../../containers/SignUp/SignUp';
+import Header from '../Header/Header';
 
 export class App extends Component {
 
@@ -37,7 +38,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Movie Tracker</h1>
+        <Header />
         <Route exact path='/' component={SignIn} />
         <Route exact path='/sign-in' component={SignIn} />
         <Route exact path='/sign-up' component={SignUp} />
