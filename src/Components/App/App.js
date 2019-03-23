@@ -37,7 +37,6 @@ export class App extends Component {
   }
 
   render() {
-    console.log('rerender')
     return (
       <div className="App">
         <Header />
@@ -48,7 +47,6 @@ export class App extends Component {
         <Route exact path={`/${this.props.user.id}/favorites`} />
         <Route exact path='/movieInfo/:id' render={({match}) => {
           const { id } = match.params
-          console.log('inception route')
           const foundMovie = this.props.movies.find((movie) => {
             return id == movie.id
           })

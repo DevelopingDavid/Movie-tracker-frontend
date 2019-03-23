@@ -3,6 +3,6 @@ export const loginUserReducer = (state={}, action) => {
     case 'LOGIN_USER':
       return { id: action.id, name: action.name };
     default: 
-      return state
+      return state;
   }
 }
