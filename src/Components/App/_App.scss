@@ -2,6 +2,10 @@
   margin: 0;
 }
 
+.App {
+  text-align: center;
+}
+
 html { 
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/marvel-main.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;

@@ -8,3 +8,8 @@ export const loginUser = (id, name) => ({
   id,
   name
 });
+
+export const setFavoriteMovies = (id) => ({
+  type: 'FAVORITE_MOVIE',
+  id
+});

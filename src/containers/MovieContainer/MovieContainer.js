@@ -6,7 +6,7 @@ import { loginUser } from '../../actions';
 
 export const MovieContainer = (props) => {
   const movieCards = props.movies.map(movie => {
-    return <Card cardInfo={movie} key={movie.id}/> 
+    return <Card cardInfo={movie} key={movie.movie_id}/> 
   });
 
   if(Object.keys(props.user).length === 0) { 
@@ -38,7 +38,7 @@ export const MovieContainer = (props) => {
 
 export const mapStateToProps = (state) => ({
   movies: state.movies,
-  user: state.loginUser
+  user: state.user
 });
 
 export const mapDispatchToProps = (dispatch) => ({

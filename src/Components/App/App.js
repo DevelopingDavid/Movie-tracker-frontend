@@ -7,6 +7,7 @@ import { Route } from 'react-router-dom';
 import SignIn from '../../containers/SignIn/SignIn';
 import SignUp from '../../containers/SignUp/SignUp';
 import Header from '../Header/Header';
+import MoviePopup from '../MoviePopup/MoviePopup';
 
 export class App extends Component {
 
@@ -25,11 +26,12 @@ export class App extends Component {
   cleanMovies = (movies) => {
     const newArray = movies.map(movie => {
       return {
-        id: movie.id, 
-        releaseDate: movie.release_date, 
-        img: movie.poster_path, 
+        movie_id: movie.id, 
         title: movie.title, 
-        rating: movie.vote_average
+        poster_path: movie.poster_path, 
+        release_date: movie.release_date, 
+        vote_average: movie.vote_average,
+        overview: movie.overview
       }
     });
     return newArray;
@@ -43,13 +45,29 @@ export class App extends Component {
         <Route exact path='/sign-in' component={SignIn} />
         <Route exact path='/sign-up' component={SignUp} />
         <Route exact path='/movies' component={MovieContainer} />
+        <Route exact path={`/${this.props.user.id}/favorites`} />
+        <Route exact path='/movieInfo/:id' render={({match}) => {
+          const { id } = match.params
+          const foundMovie = this.props.movies.find((movie) => {
+            return id == movie.movie_id
+          })
+          if (foundMovie) {
+            return <MoviePopup foundMovie={foundMovie}/>
+          }
+        }} />
+        
       </div>
     );
   }
 }
 
+export const mapStateToProps = (state) => ({
+  user: state.user,
+  movies: state.movies
+})
+
 export const mapDispatchToProps = (dispatch) => ({
   addMovies: (movies) => dispatch(addMovies(movies))
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
