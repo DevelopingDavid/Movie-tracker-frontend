@@ -26,9 +26,7 @@ export class MoviePopup extends Component {
     const response = await fetch(favoriteDatabase, options);
     if (response.ok) {
       const favoriteMovies = await response.json();
-      console.log(favoriteMovies) 
     } else {
-      console.log('help')
     }
 
 
@@ -58,6 +56,7 @@ export class MoviePopup extends Component {
         {foundMovie.title}
         <img alt='movie poster' src={`https://image.tmdb.org/t/p/w500/${foundMovie.poster_path}`}/>
         <button onClick={this.setFavorites}>Favorite</button>
+        <Link to={`/${this.props.user.id}/favorites`}>THIS IS THE FAVE LINK</Link>
         <Link to='/movies'>Return to Movies</Link>
       </div>
     )
