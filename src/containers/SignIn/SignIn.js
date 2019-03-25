@@ -52,7 +52,7 @@ export class SignIn extends Component {
   }
 
   render() {
-    if(Object.keys(this.props.user).length > 1) { 
+    if(Object.keys(this.props.user).length > 0) { 
       return <Redirect to='/movies'/>
     }
     

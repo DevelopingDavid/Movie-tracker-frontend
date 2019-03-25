@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import { addMovies } from '../../actions';
+import { addMovies, loginUser } from '../../actions';
 import { connect } from 'react-redux';
 import { url } from '../../apiURL';
 import MovieContainer from '../../containers/MovieContainer/MovieContainer';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import SignIn from '../../containers/SignIn/SignIn';
 import SignUp from '../../containers/SignUp/SignUp';
 import Header from '../Header/Header';
 import MoviePopup from '../MoviePopup/MoviePopup';
+import Favorites from '../../containers/Favorites/Favorites';
 
 export class App extends Component {
 
   componentDidMount() {
-    this.fetchNowPlaying(url)
-  }
+    this.fetchMarvelMovies(url);
+    }
 
-  fetchNowPlaying = async (url) => {
+  fetchMarvelMovies = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
     const movies = data.results;
@@ -54,8 +55,8 @@ export class App extends Component {
           if (foundMovie) {
             return <MoviePopup foundMovie={foundMovie}/>
           }
-        }} />
-        
+        }}/> 
+        <Route exact path='/:user_id/favorites' component={Favorites} />
       </div>
     );
   }
@@ -67,7 +68,8 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  addMovies: (movies) => dispatch(addMovies(movies))
+  addMovies: (movies) => dispatch(addMovies(movies)),
+  loginUser: (id, name) => dispatch(loginUser(id, name))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
