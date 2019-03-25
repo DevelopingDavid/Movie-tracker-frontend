@@ -30,8 +30,6 @@ export class MoviePopup extends Component {
     } else {
       return `can't fetch movies`;
     }
-
-
   }
 
   setFavorites = () => {
@@ -41,8 +39,10 @@ export class MoviePopup extends Component {
   }
 
   render () {
+    let styles = {
+      
+    }
     let { foundMovie } = this.props
-
     if(Object.keys(this.props.user).length === 0) { 
       let user = JSON.parse(localStorage.getItem('movieTrackerUser'));
       if (user) {
@@ -52,9 +52,16 @@ export class MoviePopup extends Component {
         return <Redirect to='/sign-in'/>;
       }
     }
+    const background = {
+      backgroundImage: `url(http://image.tmdb.org/t/p/original${foundMovie.backdrop_path})`,
+      backgroundColor: `rgba(5, 5, 5, 0.815)`,
+      backgroundBlendMode: `multiply`,
+      backgroundRepeat: `no-repeat`,
+      backgroundSize: `cover`
+    };
   
     return (
-      <section className="popup-container">
+      <section className="popup-container" style={background}>
         <div className="poster-container">
           <img alt='movie poster' src={`https://image.tmdb.org/t/p/w500/${foundMovie.poster_path}`}/>
         </div>

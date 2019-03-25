@@ -32,7 +32,8 @@ export class App extends Component {
         poster_path: movie.poster_path, 
         release_date: movie.release_date, 
         vote_average: movie.vote_average,
-        overview: movie.overview
+        overview: movie.overview,
+        backdrop_path: movie.backdrop_path
       }
     });
     return newArray;
@@ -51,7 +52,7 @@ export class App extends Component {
           const { id } = match.params
           const foundMovie = this.props.movies.find((movie) => {
             return id == movie.movie_id
-          })
+          });
           if (foundMovie) {
             return <MoviePopup foundMovie={foundMovie}/>
           }
