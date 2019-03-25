@@ -13,3 +13,8 @@ export const setFavoriteMovies = (id) => ({
   type: 'FAVORITE_MOVIE',
   id
 });
+
+export const addFavorites = (movies) => ({
+  type: 'FAVORITE_MOVIES',
+  movies
+});
