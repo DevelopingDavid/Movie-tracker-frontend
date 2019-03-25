@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+}
+
+html { 
+  background: url('./images/marvel-main.jpg') no-repeat center center fixed;
+  background-color: rgba(5, 5, 5, 0.815);
+  background-blend-mode: multiply; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -60,9 +60,9 @@ class SignUp extends Component {
               <i className="fas fa-lock"></i>          
             </div>
             <input name='password' type='password' placeholder='password' autoComplete="off"/>
-            <input type='submit'/>
+            <input className="sign-up-btn" type='submit'/>
           </form>
-          <NavLink className='sign-in-btn' to='/sign-in'>Already have an account? Sign in</NavLink>        
+          <NavLink className='sign-in-link' to='/sign-in'>Already have an account? Sign in</NavLink>        
         </section>
       </div>
     )

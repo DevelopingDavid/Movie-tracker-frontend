@@ -1,6 +1,10 @@
+* {
+	box-sizing: border-box;
+}
+
 .movies-container {
 	padding: 0 10px;
-	margin: 0;
+	margin: 32px 0;
 	background: #0e0f11;
 	color: #ecf0f1;
 	font-family: 'Open Sans', sans-serif;
@@ -10,25 +14,9 @@
 	align-items: center;
 	width: 100%;
 	background: none;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-h1,
-p {
-	text-align: center;
-}
-
-p {
-	width: 100%;
-	max-width: 500px;
-	margin: auto;
-}
-
-.contain {
-	width: 100%;
+	& :visited {
+		color: white;
+	}
 }
 
 .row {
@@ -72,6 +60,7 @@ p {
 	opacity: 0;
 	background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
 	transition: 450ms opacity;
+	color: #ecf0f1
 }
 
 .tile__details:after,

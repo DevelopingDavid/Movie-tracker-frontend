@@ -26,7 +26,9 @@ export class MoviePopup extends Component {
     const response = await fetch(favoriteDatabase, options);
     if (response.ok) {
       const favoriteMovies = await response.json();
+      return favoriteMovies;
     } else {
+      return `can't fetch movies`;
     }
 
 
@@ -52,13 +54,21 @@ export class MoviePopup extends Component {
     }
   
     return (
-      <div>
-        {foundMovie.title}
-        <img alt='movie poster' src={`https://image.tmdb.org/t/p/w500/${foundMovie.poster_path}`}/>
-        <button onClick={this.setFavorites}>Favorite</button>
-        <Link to={`/${this.props.user.id}/favorites`}>THIS IS THE FAVE LINK</Link>
-        <Link to='/movies'>Return to Movies</Link>
-      </div>
+      <section className="popup-container">
+        <div className="poster-container">
+          <img alt='movie poster' src={`https://image.tmdb.org/t/p/w500/${foundMovie.poster_path}`}/>
+        </div>
+        <div className="info-container">
+          <div>
+            <h1>{foundMovie.title}</h1>
+            <i className="fas fa-heart" onClick={this.setFavorites}></i>
+          </div>
+          <h1>{`(${foundMovie.release_date})`}</h1>
+          <p>{foundMovie.overview}</p>
+          <Link to={`/${this.props.user.id}/favorites`}>THIS IS THE FAVE LINK</Link>
+          <Link to='/movies'>Return to Movies</Link>
+        </div>
+      </section>
     )
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
-import { apiKey } from  '../../apiURL';
+// import { apiKey } from  '../../apiURL';
 import { Redirect } from 'react-router-dom';
 import { loginUser } from '../../actions';
 
