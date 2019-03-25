@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { addMovies, loginUser } from '../../actions';
 import { connect } from 'react-redux';
 import { url } from '../../apiURL';
-import MovieContainer from '../../containers/MovieContainer/MovieContainer';
-import { Route, Redirect } from 'react-router-dom';
-import SignIn from '../../containers/SignIn/SignIn';
-import SignUp from '../../containers/SignUp/SignUp';
-import Header from '../Header/Header';
+import MovieContainer from '../MovieContainer/MovieContainer';
+import { Route } from 'react-router-dom';
+import SignIn from '../SignIn/SignIn';
+import SignUp from '../SignUp/SignUp';
+import Header from '../../Components/Header/Header';
 import MoviePopup from '../MoviePopup/MoviePopup';
-import Favorites from '../../containers/Favorites/Favorites';
+import Favorites from '../Favorites/Favorites';
 
 export class App extends Component {
 
@@ -32,7 +32,8 @@ export class App extends Component {
         poster_path: movie.poster_path, 
         release_date: movie.release_date, 
         vote_average: movie.vote_average,
-        overview: movie.overview
+        overview: movie.overview,
+        backdrop_path: movie.backdrop_path
       }
     });
     return newArray;
@@ -51,7 +52,7 @@ export class App extends Component {
           const { id } = match.params
           const foundMovie = this.props.movies.find((movie) => {
             return id == movie.movie_id
-          })
+          });
           if (foundMovie) {
             return <MoviePopup foundMovie={foundMovie}/>
           }

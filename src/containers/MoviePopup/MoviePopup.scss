@@ -1,0 +1,45 @@
+.popup-container {
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+}
+.poster-container {
+  margin: 30px;
+  img {
+    width: 400px;
+  }
+}
+
+.info-container {
+  margin: 14px;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: flex-start;
+  div {
+    display: flex;
+    align-items: center;
+    i {
+      margin-left: 30px;
+      margin-top: 7px;
+      font-size: 2rem;
+      color: white;
+      &:hover {
+        color:#940002;
+      }
+    }
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    text-align: left;
+    margin: 10px 0;
+    font-size: 2rem;
+  }
+  a {
+    color: white;
+    & :visited {
+      color: white;
+    }
+  }
+}

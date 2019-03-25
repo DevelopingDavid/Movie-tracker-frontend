@@ -11,7 +11,7 @@ const Card = (props) => {
       </div>
       <div className="tile__details">
         <div className="tile__title">
-        {props.cardInfo.title}
+        <p>{props.cardInfo.title}</p>
         </div>
       </div>
     </article>

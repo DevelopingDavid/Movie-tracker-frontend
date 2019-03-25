@@ -1,12 +1,9 @@
 .sign-in-container {
-  background: url('./images/marvel-sign.jpg') center no-repeat;
-  background-size: cover; 
   height: 100vh;
-  background-color: rgba(163, 163, 163, 0.815);
-  background-blend-mode: multiply;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   section {
     height: 80%;
     background-color: #0e0f11;
@@ -29,21 +26,16 @@
     width: 100%;
     outline: none;
     padding-bottom: 5px;
+    color: white;
+  }
+  .sign-in-btn {
+    background: white;
+    color: black;
   }
   label {
     margin-right: 14px;
   }
-  input[type='email'] {
-    color: white;
-  }
-  input[type='password'] {
-    color: white;
-  }
-  input[type='submit'] {
-    background: white;
-  }
 }
-
 
 .sign-in-form {
   display: flex;
@@ -51,6 +43,6 @@
   align-items: flex-start;
 }
 
-.sign-up-btn {
+.sign-up-link {
   color: white;
 }

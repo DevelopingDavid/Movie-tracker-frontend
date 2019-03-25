@@ -6,19 +6,31 @@ header {
 	box-sizing: border-box;
   transition:top 0.3s;  
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .header-img {
   height: 100%;
-
 }
 
 .main-header-container {
   display: flex;
+  align-items: flex-end;
 }
 
 .header-text {
-  font-size: 5em;
+  font-size: 5rem;
   color: white;
+  margin-bottom: -20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  nav {
+    margin: 0 10px;
+    font-size: 2rem;
+  }
 }

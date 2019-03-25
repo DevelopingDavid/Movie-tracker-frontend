@@ -19,14 +19,8 @@ export const MovieContainer = (props) => {
     }
   }
   
-  const logoutUser = () => {
-    localStorage.removeItem('movieTrackerUser');
-    window.location.reload(true);
-  }
-  
   return (
     <section className="movies-container">
-      <button onClick={logoutUser}>Logout</button>
       <div className="row">
         <div className="row__inner">
           {movieCards}

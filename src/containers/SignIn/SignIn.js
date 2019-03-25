@@ -70,9 +70,9 @@ export class SignIn extends Component {
               <i className="fas fa-lock"></i>
             </div>
             <input type='password' name='password' value={this.state.password} placeholder='password' onChange={this.saveInput} autoComplete="off"/>
-            <input type='submit'/>
+            <input className="sign-in-btn" type='submit'/>
           </form>
-          <NavLink className='sign-up-btn' to='/sign-up'>Sign Up</NavLink>
+          <NavLink className='sign-up-link' to='/sign-up'>Sign Up</NavLink>
           <div>
             { this.state.error && this.state.error } 
           </div>
