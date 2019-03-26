@@ -19,7 +19,7 @@ export class Header extends Component {
         <div className='controls'>
           <Link to='/movies'>Movies</Link>
           <Link to={`/${this.props.user.id}/favorites`}>Favorites</Link>
-          <button onClick={this.logoutUser}>Logout</button>
+          <button id='logout-btn' onClick={this.logoutUser}>Logout</button>
         </div>
       </header>
     )

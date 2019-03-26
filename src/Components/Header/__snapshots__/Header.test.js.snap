@@ -3,7 +3,7 @@
 exports[`Header should match snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Header />,
+  Symbol(enzyme.__unrendered__): <Connect(Header) />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -16,303 +16,59 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <div
-          className="main-header-container"
-        >
-          <img
-            alt="marvel logo"
-            className="header-img"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MarvelLogo.svg/1200px-MarvelLogo.svg.png"
-          />
-          <h1
-            className="header-text"
-          >
-            Tracker
-          </h1>
-        </div>,
-        <div
-          className="controls"
-        >
-          <nav>
-            Home
-          </nav>
-          <nav>
-            Favorites
-          </nav>
-          <button
-            onClick={[Function]}
-          >
-            Logout
-          </button>
-        </div>,
-      ],
+      "children": [Function],
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <img
-              alt="marvel logo"
-              className="header-img"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MarvelLogo.svg/1200px-MarvelLogo.svg.png"
-            />,
-            <h1
-              className="header-text"
-            >
-              Tracker
-            </h1>,
-          ],
-          "className": "main-header-container",
+    "rendered": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.context),
+      "_calculateChangedBits": null,
+      "_context": Object {
+        "$$typeof": Symbol(react.context),
+        "Consumer": [Circular],
+        "Provider": Object {
+          "$$typeof": Symbol(react.provider),
+          "_context": [Circular],
         },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "alt": "marvel logo",
-              "className": "header-img",
-              "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MarvelLogo.svg/1200px-MarvelLogo.svg.png",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "img",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Tracker",
-              "className": "header-text",
-            },
-            "ref": null,
-            "rendered": "Tracker",
-            "type": "h1",
-          },
-        ],
-        "type": "div",
+        "_calculateChangedBits": null,
+        "_currentRenderer": null,
+        "_currentRenderer2": null,
+        "_currentValue": null,
+        "_currentValue2": null,
+        "_threadCount": 0,
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <nav>
-              Home
-            </nav>,
-            <nav>
-              Favorites
-            </nav>,
-            <button
-              onClick={[Function]}
-            >
-              Logout
-            </button>,
-          ],
-          "className": "controls",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Home",
-            },
-            "ref": null,
-            "rendered": "Home",
-            "type": "nav",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Favorites",
-            },
-            "ref": null,
-            "rendered": "Favorites",
-            "type": "nav",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Logout",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Logout",
-            "type": "button",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "header",
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": Array [
-          <div
-            className="main-header-container"
-          >
-            <img
-              alt="marvel logo"
-              className="header-img"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MarvelLogo.svg/1200px-MarvelLogo.svg.png"
-            />
-            <h1
-              className="header-text"
-            >
-              Tracker
-            </h1>
-          </div>,
-          <div
-            className="controls"
-          >
-            <nav>
-              Home
-            </nav>
-            <nav>
-              Favorites
-            </nav>
-            <button
-              onClick={[Function]}
-            >
-              Logout
-            </button>
-          </div>,
-        ],
+        "children": [Function],
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <img
-                alt="marvel logo"
-                className="header-img"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MarvelLogo.svg/1200px-MarvelLogo.svg.png"
-              />,
-              <h1
-                className="header-text"
-              >
-                Tracker
-              </h1>,
-            ],
-            "className": "main-header-container",
+      "rendered": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": Object {
+          "$$typeof": Symbol(react.context),
+          "Consumer": [Circular],
+          "Provider": Object {
+            "$$typeof": Symbol(react.provider),
+            "_context": [Circular],
           },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "alt": "marvel logo",
-                "className": "header-img",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MarvelLogo.svg/1200px-MarvelLogo.svg.png",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "img",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Tracker",
-                "className": "header-text",
-              },
-              "ref": null,
-              "rendered": "Tracker",
-              "type": "h1",
-            },
-          ],
-          "type": "div",
+          "_calculateChangedBits": null,
+          "_currentRenderer": null,
+          "_currentRenderer2": null,
+          "_currentValue": null,
+          "_currentValue2": null,
+          "_threadCount": 0,
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <nav>
-                Home
-              </nav>,
-              <nav>
-                Favorites
-              </nav>,
-              <button
-                onClick={[Function]}
-              >
-                Logout
-              </button>,
-            ],
-            "className": "controls",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Home",
-              },
-              "ref": null,
-              "rendered": "Home",
-              "type": "nav",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Favorites",
-              },
-              "ref": null,
-              "rendered": "Favorites",
-              "type": "nav",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Logout",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Logout",
-              "type": "button",
-            },
-          ],
-          "type": "div",
-        },
-      ],
-      "type": "header",
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
