@@ -3,13 +3,14 @@ import { App, mapDispatchToProps, mapStateToProps } from './App';
 import { shallow } from 'enzyme';
 import { addMovies } from '../../actions';
 import { mockMovies } from '../../mockData/mockMovies';
+import { mockUser } from '../../mockData/mockUser';
 
 describe('App', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow( 
-      <App />
+      <App user={mockUser}/>
     ) 
   });
 

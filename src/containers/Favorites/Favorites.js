@@ -19,9 +19,7 @@ export class Favorites extends Component {
     const movies = this.renderMovies(data.data)
 
     if (this.props.fetchedMovies.length === 0) {
-      if (!this.props.favoriteMovies.includes(Object.keys(movies))) {
-        return this.props.addFavorites(movies)
-      }
+      return this.props.addFavorites(movies)
     }
   }
 

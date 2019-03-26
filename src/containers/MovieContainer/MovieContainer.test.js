@@ -2,8 +2,32 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { mapStateToProps } from './MovieContainer';
 import MovieContainer from './MovieContainer';
+import { mockUser } from '../../mockData/mockUser';
 
-describe('MovieContainer', ()=> {
+const localStorageMock = {
+  getItem: jest.fn(),
+  setItem: jest.fn(),
+  clear: jest.fn()
+};
+global.localStorage = localStorageMock;
+
+describe('MovieContainer', () => {
+  let wrapper;
+  const mockLoginUser = jest.fn();
+  beforeEach(()=> {
+    wrapper = shallow(
+      <MovieContainer user={{}} loginUser={mockLoginUser}/>
+    )
+  });
+  
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should grab user from local storage', () => {
+    console.log(wrapper.user)
+    expect(mockLoginUser).not.toBeCalled();
+  });
 
   describe('mapStateToProps', () => {
     it('should return an object with a movies array', () => {

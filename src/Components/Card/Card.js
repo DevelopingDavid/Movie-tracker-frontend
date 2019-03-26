@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Card = (props) => {
-
   return (
     <Link to={`/movieInfo/${props.cardInfo.movie_id}`}>
     <article className="tile" >
