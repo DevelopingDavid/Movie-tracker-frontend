@@ -1,15 +1,15 @@
 import React from 'react';
-import App from './App';
+import { App, mapDispatchToProps, mapStateToProps } from './App';
 import { shallow } from 'enzyme';
-import { mapDispatchToProps } from './App';
 import { addMovies } from '../../actions';
+import { mockMovies } from '../../mockData/mockMovies';
 
 describe('App', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow( 
-      <App/>
+      <App />
     ) 
   });
 
@@ -41,5 +41,4 @@ describe('App', () => {
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
   });
-
 });
