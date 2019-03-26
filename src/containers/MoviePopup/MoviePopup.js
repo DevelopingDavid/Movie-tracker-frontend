@@ -78,11 +78,10 @@ export class MoviePopup extends Component {
           <div>
             <h1>{foundMovie.title}</h1>
             <i className="fas fa-heart" onClick={this.setFavorites}></i>
+            <Link to='/movies'><i class="fas fa-undo"></i></Link>
           </div>
           <h1>{`(${foundMovie.release_date})`}</h1>
           <p>{foundMovie.overview}</p>
-          <Link to={`/${this.props.user.id}/favorites`}>THIS IS THE FAVE LINK</Link>
-          <Link to='/movies'>Return to Movies</Link>
           <button onClick={this.deleteFavorites}>DELETE SHIT</button>
         </div>
       </section>
