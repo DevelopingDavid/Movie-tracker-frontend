@@ -16,8 +16,9 @@ describe('MoviePopup', () => {
 
   beforeEach(() => {
     wrapper = shallow( 
-      <MoviePopup user={mockState}
-                  foundMovie={mockFoundMovie}/>
+      <MoviePopup 
+        user={mockState}
+        foundMovie={mockFoundMovie} />
     ) 
   });
 
