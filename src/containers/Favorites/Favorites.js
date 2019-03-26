@@ -17,8 +17,11 @@ export class Favorites extends Component {
     const response = await fetch(favoritesURL);
     const data = await response.json();
     const movies = this.renderMovies(data.data)
+
     if (this.props.fetchedMovies.length === 0) {
-      return this.props.addFavorites(movies)
+      if (!this.props.favoriteMovies.includes(Object.keys(movies))) {
+        return this.props.addFavorites(movies)
+      }
     }
   }
 

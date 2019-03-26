@@ -32,6 +32,18 @@ export class MoviePopup extends Component {
     }
   }
 
+  deleteFavorites = async () => {
+    const { user, foundMovie } = this.props
+    const deleteURL = `http://localhost:3000/api/users/${user.id}/favorites/${foundMovie.movie_id}`;
+    const options = {
+      method: 'DELETE',
+      body: [user.id, foundMovie.movie_id]
+    }
+    const response = await fetch(deleteURL, options);
+    const data = await response.json();
+    console.log(data)
+  }
+
   setFavorites = () => {
     let { foundMovie, setFavoriteMovies } = this.props
     setFavoriteMovies(foundMovie.movie_id);
@@ -70,6 +82,7 @@ export class MoviePopup extends Component {
           </div>
           <h1>{`(${foundMovie.release_date})`}</h1>
           <p>{foundMovie.overview}</p>
+          <button onClick={this.deleteFavorites}>DELETE SHIT</button>
         </div>
       </section>
     )
