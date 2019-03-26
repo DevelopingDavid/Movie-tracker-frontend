@@ -1,3 +1,328 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card should match snapshot 1`] = `undefined`;
+exports[`Card should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    cardInfo={
+      Object {
+        "backdrop_path": "/w2PMyoyLU22YvrGK3smVM9fW1jj.jpg",
+        "movie_id": 299537,
+        "overview": "The story follows Carol Danvers as she becomes one of the universe’s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races. Set in the 1990s, Captain Marvel is an all-new adventure from a previously unseen period in the history of the Marvel Cinematic Universe.",
+        "poster_path": "/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
+        "release_date": "2019-03-06",
+        "title": "Captain Marvel",
+        "vote_average": 7.3,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <article
+        className="tile"
+      >
+        <div
+          className="tile__media"
+        >
+          <img
+            alt="movie-poster"
+            className="tile__img"
+            src="https://image.tmdb.org/t/p/w500//AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg"
+          />
+        </div>
+        <div
+          className="tile__details"
+        >
+          <div
+            className="tile__title"
+          >
+            <p>
+              Captain Marvel
+            </p>
+          </div>
+        </div>
+      </article>,
+      "to": "/movieInfo/299537",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="tile__media"
+          >
+            <img
+              alt="movie-poster"
+              className="tile__img"
+              src="https://image.tmdb.org/t/p/w500//AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg"
+            />
+          </div>,
+          <div
+            className="tile__details"
+          >
+            <div
+              className="tile__title"
+            >
+              <p>
+                Captain Marvel
+              </p>
+            </div>
+          </div>,
+        ],
+        "className": "tile",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="movie-poster"
+              className="tile__img"
+              src="https://image.tmdb.org/t/p/w500//AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg"
+            />,
+            "className": "tile__media",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "movie-poster",
+              "className": "tile__img",
+              "src": "https://image.tmdb.org/t/p/w500//AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="tile__title"
+            >
+              <p>
+                Captain Marvel
+              </p>
+            </div>,
+            "className": "tile__details",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <p>
+                Captain Marvel
+              </p>,
+              "className": "tile__title",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Captain Marvel",
+              },
+              "ref": null,
+              "rendered": "Captain Marvel",
+              "type": "p",
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "article",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <article
+          className="tile"
+        >
+          <div
+            className="tile__media"
+          >
+            <img
+              alt="movie-poster"
+              className="tile__img"
+              src="https://image.tmdb.org/t/p/w500//AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg"
+            />
+          </div>
+          <div
+            className="tile__details"
+          >
+            <div
+              className="tile__title"
+            >
+              <p>
+                Captain Marvel
+              </p>
+            </div>
+          </div>
+        </article>,
+        "to": "/movieInfo/299537",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="tile__media"
+            >
+              <img
+                alt="movie-poster"
+                className="tile__img"
+                src="https://image.tmdb.org/t/p/w500//AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg"
+              />
+            </div>,
+            <div
+              className="tile__details"
+            >
+              <div
+                className="tile__title"
+              >
+                <p>
+                  Captain Marvel
+                </p>
+              </div>
+            </div>,
+          ],
+          "className": "tile",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <img
+                alt="movie-poster"
+                className="tile__img"
+                src="https://image.tmdb.org/t/p/w500//AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg"
+              />,
+              "className": "tile__media",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "movie-poster",
+                "className": "tile__img",
+                "src": "https://image.tmdb.org/t/p/w500//AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="tile__title"
+              >
+                <p>
+                  Captain Marvel
+                </p>
+              </div>,
+              "className": "tile__details",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <p>
+                  Captain Marvel
+                </p>,
+                "className": "tile__title",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Captain Marvel",
+                },
+                "ref": null,
+                "rendered": "Captain Marvel",
+                "type": "p",
+              },
+              "type": "div",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "article",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

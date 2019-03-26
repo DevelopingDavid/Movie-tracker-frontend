@@ -1,6 +1,6 @@
 import React from 'react';
-import SignIn from '../SignIn/SignIn';
-import { shallow } from 'enzyme';
+import SignIn  from '../SignIn/SignIn';
+import { shallow }  from 'enzyme';
 
 describe('SignIn', () => {
   let wrapper;
@@ -8,7 +8,7 @@ describe('SignIn', () => {
   beforeEach(() => {
     wrapper = shallow( 
       <SignIn />
-    ) 
+    )
   });
 
   it('should match snapshot', () => {
