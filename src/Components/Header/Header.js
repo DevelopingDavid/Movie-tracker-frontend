@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-class Header extends Component {
+export class Header extends Component {
 
   logoutUser = () => {
     localStorage.removeItem('movieTrackerUser');
@@ -15,8 +17,8 @@ class Header extends Component {
           <h1 className='header-text'>Tracker</h1>
         </div>
         <div className='controls'>
-          <nav>Home</nav>
-          <nav>Favorites</nav>
+          <Link to='/movies'>Movies</Link>
+          <Link to={`/${this.props.user.id}/favorites`}>Favorites</Link>
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       </header>
@@ -24,4 +26,9 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export const mapStateToProps = (state) => ({
+  user: state.user
+});
+
+export default connect(mapStateToProps)(Header)
+

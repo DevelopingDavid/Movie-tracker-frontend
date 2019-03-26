@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { loginUser, addMovies, addFavorites } from '../../actions';
+import { loginUser, addFavorites } from '../../actions';
 import Card from '../../Components/Card/Card';
 
 export class Favorites extends Component {

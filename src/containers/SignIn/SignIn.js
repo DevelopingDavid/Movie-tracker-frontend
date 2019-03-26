@@ -26,14 +26,14 @@ export class SignIn extends Component {
     const response = await fetch(userDatabase, options);
     if(response.ok) {
       const user = await response.json();
-      return user.data
+      return user.data;
     } else {
-      return 'Incorrect email/password combination'
+      return 'Incorrect email/password combination';
     }
   }
 
   validateUser = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const user = await this.fetchUsers();
     if(typeof user === 'object') {
       this.props.loginUser(user.id, user.name);
