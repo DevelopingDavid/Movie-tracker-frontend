@@ -1,13 +1,15 @@
 import React from 'react';
-import SignUp from '../SignUp/SignUp';
+import { SignUp } from '../SignUp/SignUp';
 import { shallow } from 'enzyme';
+import { mockUser } from '../../mockData/mockUser';
 
+let mockLoginUser = jest.fn()
 describe('SignUp', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow( 
-      <SignUp/>
+      <SignUp user={mockUser} loginUser={mockLoginUserc}/>
     ) 
   });
 
