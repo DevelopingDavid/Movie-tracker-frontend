@@ -11,7 +11,7 @@ export class MoviePopup extends Component {
     const newMovieInfo = { 
       movie_id: movieInfo.movie_id,
       user_id: this.props.user.id, 
-      title:movieInfo.title, 
+      title: movieInfo.title, 
       poster_path: movieInfo.poster_path, 
       release_date: movieInfo.release_date, 
       vote_average: movieInfo.vote_average, 
@@ -77,12 +77,12 @@ export class MoviePopup extends Component {
         <div className="info-container">
           <div>
             <h1>{foundMovie.title}</h1>
-            <i className="fas fa-heart" onClick={this.setFavorites}></i>
+            <i id='heart-favorite' className="fas fa-heart" onClick={this.setFavorites}></i>
+            <i onClick={this.deleteFavorites} className="fa fa-trash" aria-hidden="true"></i>
             <Link to='/movies'><i class="fas fa-undo"></i></Link>
           </div>
           <h1>{`(${foundMovie.release_date})`}</h1>
           <p>{foundMovie.overview}</p>
-          <button onClick={this.deleteFavorites}>DELETE SHIT</button>
         </div>
       </section>
     )
