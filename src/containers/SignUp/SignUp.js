@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { loginUser } from '../../actions';
 
-class SignUp extends Component {
+export class SignUp extends Component {
   constructor() {
     super();
     this.state = {
@@ -26,6 +28,7 @@ class SignUp extends Component {
     const response = await fetch(userDatabase, options);
     if(response.ok) {
       const data = await response.json();
+      this.props.loginUser(data.id, this.state.name)
       return data;
     } else {
       return 'Please fill out form'
@@ -41,6 +44,11 @@ class SignUp extends Component {
   }
 
   render() {
+
+    if(Object.keys(this.props.user).length > 0) { 
+      return <Redirect to='/movies'/>
+    }
+
     return(
       <div className='sign-up-container'>
         <section>
@@ -69,4 +77,12 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp
+export const mapDispatchToProps = (dispatch) => ({
+  loginUser: (id, name) => dispatch(loginUser(id, name))
+});
+
+export const mapStateToProps = (state) => ({
+  user: state.user
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
