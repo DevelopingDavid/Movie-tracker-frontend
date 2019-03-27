@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { loginUser, addFavorites } from '../../actions';
 import Card from '../../Components/Card/Card';
+import propTypes from 'prop-types';
 
 export class Favorites extends Component {
 
@@ -59,3 +60,11 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites)
+
+Favorites.propTypes = {
+  addFavorites: propTypes.func,
+  fetchedMovies: propTypes.array,
+  loginUser: propTypes.func,  
+  match: propTypes.object,
+  user: propTypes.object
+}

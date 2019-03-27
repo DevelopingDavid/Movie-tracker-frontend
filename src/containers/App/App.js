@@ -9,6 +9,7 @@ import SignUp from '../SignUp/SignUp';
 import Header from '../../Components/Header/Header';
 import MoviePopup from '../MoviePopup/MoviePopup';
 import Favorites from '../Favorites/Favorites';
+import propTypes from 'prop-types';
 
 export class App extends Component {
 
@@ -74,3 +75,10 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+App.propTypes = {
+  addMovies: propTypes.func,
+  loginUser: propTypes.func,
+  movies: propTypes.array,
+  user: propTypes.object
+}

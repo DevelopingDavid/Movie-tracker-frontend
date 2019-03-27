@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Card from '../../Components/Card/Card';
 import { Redirect } from 'react-router-dom';
 import { loginUser } from '../../actions';
+import propTypes from 'prop-types';
 
 export const MovieContainer = (props) => {
   const movieCards = props.movies.map(movie => {
@@ -40,3 +41,10 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieContainer);
+
+
+MovieContainer.propTypes = {
+  loginUser: propTypes.func,  
+  user: propTypes.object,
+  movies: propTypes.object
+}
