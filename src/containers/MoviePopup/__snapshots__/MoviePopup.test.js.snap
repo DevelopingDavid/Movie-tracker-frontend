@@ -1,3 +1,524 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MoviePopup should match snapshot 1`] = `undefined`;
+exports[`MoviePopup should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MoviePopup
+    foundMovie={Object {}}
+    setFavoriteMovies={Object {}}
+    user={
+      Object {
+        "user": Object {
+          "id": 76,
+          "name": "matt",
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="poster-container"
+        >
+          <img
+            alt="movie poster"
+            src="https://image.tmdb.org/t/p/w500/undefined"
+          />
+        </div>,
+        <div
+          className="info-container"
+        >
+          <div>
+            <h1 />
+            <i
+              className="fas fa-heart"
+              id="heart-favorite"
+              onClick={[Function]}
+            />
+            <i
+              aria-hidden="true"
+              className="fa fa-trash"
+              onClick={[Function]}
+            />
+            <Link
+              to="/movies"
+            >
+              <i
+                class="fas fa-undo"
+              />
+            </Link>
+          </div>
+          <h1>
+            (undefined)
+          </h1>
+          <p />
+        </div>,
+      ],
+      "className": "popup-container",
+      "style": Object {
+        "backgroundBlendMode": "multiply",
+        "backgroundColor": "rgba(5, 5, 5, 0.815)",
+        "backgroundImage": "url(http://image.tmdb.org/t/p/originalundefined)",
+        "backgroundRepeat": "no-repeat",
+        "backgroundSize": "cover",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <img
+            alt="movie poster"
+            src="https://image.tmdb.org/t/p/w500/undefined"
+          />,
+          "className": "poster-container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "movie poster",
+            "src": "https://image.tmdb.org/t/p/w500/undefined",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div>
+              <h1 />
+              <i
+                className="fas fa-heart"
+                id="heart-favorite"
+                onClick={[Function]}
+              />
+              <i
+                aria-hidden="true"
+                className="fa fa-trash"
+                onClick={[Function]}
+              />
+              <Link
+                to="/movies"
+              >
+                <i
+                  class="fas fa-undo"
+                />
+              </Link>
+            </div>,
+            <h1>
+              (undefined)
+            </h1>,
+            <p />,
+          ],
+          "className": "info-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h1 />,
+                <i
+                  className="fas fa-heart"
+                  id="heart-favorite"
+                  onClick={[Function]}
+                />,
+                <i
+                  aria-hidden="true"
+                  className="fa fa-trash"
+                  onClick={[Function]}
+                />,
+                <Link
+                  to="/movies"
+                >
+                  <i
+                    class="fas fa-undo"
+                  />
+                </Link>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "h1",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fas fa-heart",
+                  "id": "heart-favorite",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "aria-hidden": "true",
+                  "className": "fa fa-trash",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <i
+                    class="fas fa-undo"
+                  />,
+                  "to": "/movies",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "class": "fas fa-undo",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "(undefined)",
+            },
+            "ref": null,
+            "rendered": "(undefined)",
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="poster-container"
+          >
+            <img
+              alt="movie poster"
+              src="https://image.tmdb.org/t/p/w500/undefined"
+            />
+          </div>,
+          <div
+            className="info-container"
+          >
+            <div>
+              <h1 />
+              <i
+                className="fas fa-heart"
+                id="heart-favorite"
+                onClick={[Function]}
+              />
+              <i
+                aria-hidden="true"
+                className="fa fa-trash"
+                onClick={[Function]}
+              />
+              <Link
+                to="/movies"
+              >
+                <i
+                  class="fas fa-undo"
+                />
+              </Link>
+            </div>
+            <h1>
+              (undefined)
+            </h1>
+            <p />
+          </div>,
+        ],
+        "className": "popup-container",
+        "style": Object {
+          "backgroundBlendMode": "multiply",
+          "backgroundColor": "rgba(5, 5, 5, 0.815)",
+          "backgroundImage": "url(http://image.tmdb.org/t/p/originalundefined)",
+          "backgroundRepeat": "no-repeat",
+          "backgroundSize": "cover",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="movie poster"
+              src="https://image.tmdb.org/t/p/w500/undefined"
+            />,
+            "className": "poster-container",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "movie poster",
+              "src": "https://image.tmdb.org/t/p/w500/undefined",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                <h1 />
+                <i
+                  className="fas fa-heart"
+                  id="heart-favorite"
+                  onClick={[Function]}
+                />
+                <i
+                  aria-hidden="true"
+                  className="fa fa-trash"
+                  onClick={[Function]}
+                />
+                <Link
+                  to="/movies"
+                >
+                  <i
+                    class="fas fa-undo"
+                  />
+                </Link>
+              </div>,
+              <h1>
+                (undefined)
+              </h1>,
+              <p />,
+            ],
+            "className": "info-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h1 />,
+                  <i
+                    className="fas fa-heart"
+                    id="heart-favorite"
+                    onClick={[Function]}
+                  />,
+                  <i
+                    aria-hidden="true"
+                    className="fa fa-trash"
+                    onClick={[Function]}
+                  />,
+                  <Link
+                    to="/movies"
+                  >
+                    <i
+                      class="fas fa-undo"
+                    />
+                  </Link>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "h1",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "fas fa-heart",
+                    "id": "heart-favorite",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "aria-hidden": "true",
+                    "className": "fa fa-trash",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <i
+                      class="fas fa-undo"
+                    />,
+                    "to": "/movies",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "class": "fas fa-undo",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "i",
+                  },
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "(undefined)",
+              },
+              "ref": null,
+              "rendered": "(undefined)",
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
