@@ -64,7 +64,7 @@ export class SignIn extends Component {
               <label>Email</label>
               <i className="fas fa-envelope"></i>
             </div>
-            <input type='email' name='email' value={this.state.email} placeholder='email@example.com' onChange={this.saveInput} autoComplete="off"/>
+            <input type='email' name='email' className='input-email' value={this.state.email} placeholder='email@example.com' onChange={this.saveInput} autoComplete="off"/>
             <div>
               <label>Password</label>
               <i className="fas fa-lock"></i>

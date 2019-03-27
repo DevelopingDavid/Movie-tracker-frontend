@@ -1,13 +1,14 @@
 import React from 'react';
-import SignIn  from '../SignIn/SignIn';
+import { SignIn }   from '../SignIn/SignIn';
 import { shallow }  from 'enzyme';
+import { mockUser } from '../../mockData/mockUser';
 
 describe('SignIn', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow( 
-      <SignIn />
+      <SignIn user={mockUser} />
     )
   });
 
@@ -23,4 +24,15 @@ describe('SignIn', () => {
     });
   });
 
+  it('should save email input to state' , () => {
+    wrapper.instance().saveInput({preventDefault: () => {}, target: { name: 'email', value: 'david@gmail.com'}});
+
+    expect(wrapper.state('email')).toEqual('david@gmail.com');
+  });
+
+  it('should save password input to state' , () => {
+    wrapper.instance().saveInput({preventDefault: () => {}, target: { name: 'password', value: '1234'}});
+
+    expect(wrapper.state('password')).toEqual('1234');
+  });
 });
