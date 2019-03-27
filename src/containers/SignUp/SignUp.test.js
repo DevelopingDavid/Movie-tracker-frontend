@@ -23,4 +23,22 @@ describe('SignUp', () => {
       error: ''
     })
   });
+
+  it('should save email input to state' , () => {
+    wrapper.instance().saveInput({preventDefault: () => {}, target: { name: 'email', value: 'david@gmail.com'}});
+
+    expect(wrapper.state('email')).toEqual('david@gmail.com');
+  });
+
+  it('should save password input to state' , () => {
+    wrapper.instance().saveInput({preventDefault: () => {}, target: { name: 'password', value: '1234'}});
+
+    expect(wrapper.state('password')).toEqual('1234');
+  });
+
+  it('should save name input to state' , () => {
+    wrapper.instance().saveInput({preventDefault: () => {}, target: { name: 'name', value: 'david'}});
+
+    expect(wrapper.state('name')).toEqual('david');
+  });
 });

@@ -3,30 +3,29 @@ import { shallow } from 'enzyme';
 import { mapStateToProps } from './MovieContainer';
 import MovieContainer from './MovieContainer';
 import { mockUser } from '../../mockData/mockUser';
-
-const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  clear: jest.fn()
-};
-global.localStorage = localStorageMock;
+const mockLoginUser = jest.fn();
 
 describe('MovieContainer', () => {
   let wrapper;
-  const mockLoginUser = jest.fn();
   beforeEach(()=> {
     wrapper = shallow(
       <MovieContainer user={{}} loginUser={mockLoginUser}/>
-    )
+    );
   });
   
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should grab user from local storage', () => {
-    console.log(wrapper.user)
+  it('should redirect our user', () => {
     expect(mockLoginUser).not.toBeCalled();
+  });
+
+  it.skip('should login our user', () => {
+    wrapper = shallow(
+      <MovieContainer user={mockUser} loginUser={mockLoginUser}/>
+    );
+    expect(wrapper.instance().props.loginUser).toBeCalled();
   });
 
   describe('mapStateToProps', () => {
