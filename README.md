@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Marvel Tracker
+Marvel Tracker is a Netflix clone which allows a user to sign-up, sign-in and view current Marvel films. When a user clicks on a movie, they are redirected to a "Learn More" popup, which includes the movie poster, a synopsis of the film, release date and movie rating. 
 
-## Available Scripts
+This project was a week long paired project and created by David Cisneros and Joshua Lavarine.
 
-In the project directory, you can run:
+## Tech / Frameworks Used
+- ReactJS
+- Redux
+- React Router
+- SASS
+- JSX
+- fetch API
+- localStorage
+- Testing with Enzyme & Jest
 
-### `npm start`
+## What we learned
+We learned how to effectively implement Redux and React-Router into our ReactJS application. Understanding how all parts of Redux (including Actions, Action Creators, Reducers, Dispatch, and State) tie into the Redux store. By successfully implementing Redux, we were able to remove the necessity for "prop drilling." Implementing React-Router enabled us to turn our single page React app into a more robust multi-page application. 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Challenges faced
+Testing the front-end is notoriously difficult and this project did not prove the exception. Testing asyncronous code adds another layer of difficulty to the testing suite. 
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Another challenge faced was understanding the process of Redux and how all the pieces communicate with each other. 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## "Wins"
+We are both very pleased with overall feel of the application. The Marvel films are bold and our design equally catches the eye. And although this is previously mentioned in the "What we learned" section, understanding Redux more completely and implementing React-Router was a big win and learning goal for this project. 
 
-### `npm run build`
+## Future Implementations
+In future, I would like to expand my current dataset. Currently there are five "pioneers" with five questions and answers relating to each. I would like to have more questions and more "pioneers," which would make the experience more enriching for users.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I would also like to create a button that would allow users to reset the question bank without having to complete the entire quiz.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Additionally, I would like to add a total score, which would add up all of the individual round scores. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tools Used
+[VSCode](https://code.visualstudio.com/)  
 
-### `npm run eject`
+## Credits
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+https://github.com/turingschool-examples/movie-tracker
