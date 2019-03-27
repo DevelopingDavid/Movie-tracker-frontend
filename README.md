@@ -3,7 +3,7 @@ Marvel Tracker is a Netflix clone which allows a user to sign-up, sign-in and vi
 
 This project was a week long paired project and created by David Cisneros and Joshua Lavarine.
 
-<iframe src="https://giphy.com/embed/1msv7MOasX5cfqK19U" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/1msv7MOasX5cfqK19U">via GIPHY</a></p>
+![giphy](https://user-images.githubusercontent.com/40274984/55083557-59ce6f00-5069-11e9-9dec-3bca035b4a62.gif)
 
 ## Tech / Frameworks Used
 - ReactJS
