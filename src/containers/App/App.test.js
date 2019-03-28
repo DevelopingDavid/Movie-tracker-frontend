@@ -7,10 +7,14 @@ import { mockUser } from '../../mockData/mockUser';
 
 describe('App', () => {
   let wrapper;
-
+  
   beforeEach(() => {
     wrapper = shallow( 
-      <App user={mockUser}/>
+      <App 
+        user={mockUser} 
+        movies={mockMovies}
+        loginUser={jest.fn()}
+        addMovies={jest.fn()}/>
     ) 
   });
 

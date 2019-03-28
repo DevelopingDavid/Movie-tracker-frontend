@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setFavoriteMovies, loginUser } from '../../actions';
 import { Link, Redirect} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 
 export class MoviePopup extends Component {
@@ -79,7 +80,7 @@ export class MoviePopup extends Component {
             <h1>{foundMovie.title}</h1>
             <i id='heart-favorite' className="fas fa-heart" onClick={this.setFavorites}></i>
             <i onClick={this.deleteFavorites} className="fa fa-trash" aria-hidden="true"></i>
-            <Link to='/movies'><i class="fas fa-undo"></i></Link>
+            <Link to='/movies'><i className="fas fa-undo"></i></Link>
           </div>
           <h1>{`(${foundMovie.release_date})`}</h1>
           <p>{foundMovie.overview}</p>
@@ -99,3 +100,9 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviePopup)
+
+MoviePopup.propTypes = {
+  user: PropTypes.object.isRequired,
+  loginUser: PropTypes.func.isRequired,
+  setFavoriteMovies: PropTypes.object.isRequired
+}

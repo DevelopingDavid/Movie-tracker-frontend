@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export class Header extends Component {
 
@@ -32,3 +33,6 @@ export const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps)(Header)
 
+Header.propTypes = {
+  user: PropTypes.object.isRequired
+}

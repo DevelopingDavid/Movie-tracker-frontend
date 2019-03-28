@@ -6,9 +6,10 @@ import MovieContainer from '../MovieContainer/MovieContainer';
 import { Route } from 'react-router-dom';
 import SignIn from '../SignIn/SignIn';
 import SignUp from '../SignUp/SignUp';
-import Header from '../../Components/Header/Header';
+import Header from '../../containers/Header/Header';
 import MoviePopup from '../MoviePopup/MoviePopup';
 import Favorites from '../Favorites/Favorites';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
 
@@ -63,6 +64,7 @@ export class App extends Component {
   }
 }
 
+
 export const mapStateToProps = (state) => ({
   user: state.user,
   movies: state.movies
@@ -74,3 +76,10 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+  
+App.propTypes = {
+    addMovies: PropTypes.func.isRequired,
+    loginUser: PropTypes.func.isRequired,
+    movies: PropTypes.array.isRequired,
+    user: PropTypes.object.isRequired
+  }

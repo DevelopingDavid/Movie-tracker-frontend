@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions';
+import PropTypes from 'prop-types';
 
 export class SignUp extends Component {
   constructor() {
@@ -86,3 +87,8 @@ export const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+
+SignUp.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired
+}
