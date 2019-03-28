@@ -4,6 +4,7 @@ exports[`SignIn should match snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SignIn
+    loginUser={[MockFunction]}
     user={
       Object {
         "email": "david@gmail.com",

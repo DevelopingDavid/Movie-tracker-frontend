@@ -8,7 +8,9 @@ describe('SignIn', () => {
 
   beforeEach(() => {
     wrapper = shallow( 
-      <SignIn user={mockUser} />
+      <SignIn 
+        user={mockUser}
+        loginUser={jest.fn()}/>
     )
   });
 

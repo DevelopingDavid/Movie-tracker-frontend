@@ -7,7 +7,7 @@ describe('Favorites', () => {
 
   beforeEach(() => {
     wrapper = shallow( 
-      <Favorites/>
+      <Favorites />
     ) 
   });
 

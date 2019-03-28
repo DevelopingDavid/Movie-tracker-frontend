@@ -5,6 +5,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MoviePopup
     foundMovie={Object {}}
+    loginUser={[MockFunction]}
     setFavoriteMovies={Object {}}
     user={
       Object {
@@ -57,7 +58,7 @@ ShallowWrapper {
               to="/movies"
             >
               <i
-                class="fas fa-undo"
+                className="fas fa-undo"
               />
             </Link>
           </div>
@@ -126,7 +127,7 @@ ShallowWrapper {
                 to="/movies"
               >
                 <i
-                  class="fas fa-undo"
+                  className="fas fa-undo"
                 />
               </Link>
             </div>,
@@ -160,7 +161,7 @@ ShallowWrapper {
                   to="/movies"
                 >
                   <i
-                    class="fas fa-undo"
+                    className="fas fa-undo"
                   />
                 </Link>,
               ],
@@ -210,7 +211,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": <i
-                    class="fas fa-undo"
+                    className="fas fa-undo"
                   />,
                   "to": "/movies",
                 },
@@ -220,7 +221,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "class": "fas fa-undo",
+                    "className": "fas fa-undo",
                   },
                   "ref": null,
                   "rendered": null,
@@ -293,7 +294,7 @@ ShallowWrapper {
                 to="/movies"
               >
                 <i
-                  class="fas fa-undo"
+                  className="fas fa-undo"
                 />
               </Link>
             </div>
@@ -362,7 +363,7 @@ ShallowWrapper {
                   to="/movies"
                 >
                   <i
-                    class="fas fa-undo"
+                    className="fas fa-undo"
                   />
                 </Link>
               </div>,
@@ -396,7 +397,7 @@ ShallowWrapper {
                     to="/movies"
                   >
                     <i
-                      class="fas fa-undo"
+                      className="fas fa-undo"
                     />
                   </Link>,
                 ],
@@ -446,7 +447,7 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "children": <i
-                      class="fas fa-undo"
+                      className="fas fa-undo"
                     />,
                     "to": "/movies",
                   },
@@ -456,7 +457,7 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "class": "fas fa-undo",
+                      "className": "fas fa-undo",
                     },
                     "ref": null,
                     "rendered": null,

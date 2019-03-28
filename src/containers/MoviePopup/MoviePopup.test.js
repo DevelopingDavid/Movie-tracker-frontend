@@ -20,7 +20,9 @@ describe('MoviePopup', () => {
       <MoviePopup 
         user={mockState}
         foundMovie={mockFoundMovie} 
-        setFavoriteMovies={mockFoundMovie} />
+        setFavoriteMovies={mockFoundMovie}
+        loginUser={jest.fn()}
+        />
     ) 
   });
 
