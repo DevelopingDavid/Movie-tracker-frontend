@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setFavoriteMovies, loginUser } from '../../actions';
+import { setFavoriteMovie, loginUser } from '../../actions';
 import { Link, Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -46,8 +46,8 @@ export class MoviePopup extends Component {
   }
 
   setFavorites = () => {
-    let { foundMovie, setFavoriteMovies } = this.props
-    setFavoriteMovies(foundMovie.movie_id);
+    let { foundMovie, setFavoriteMovie } = this.props
+    setFavoriteMovie(foundMovie.movie_id);
     this.addFavoriteToDatabase();
   }
 
@@ -95,7 +95,7 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  setFavoriteMovies: (id) => dispatch(setFavoriteMovies(id)),
+  setFavoriteMovie: (id) => dispatch(setFavoriteMovie(id)),
   loginUser: (id, name) => dispatch(loginUser(id, name))
 });
 

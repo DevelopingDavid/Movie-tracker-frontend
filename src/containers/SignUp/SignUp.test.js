@@ -9,7 +9,7 @@ describe('SignUp', () => {
 
   beforeEach(() => {
     wrapper = shallow( 
-      <SignUp user={mockUser} loginUser={mockLoginUserc}/>
+      <SignUp user={mockUser} loginUser={mockLoginUser}/>
     ) 
   });
 
