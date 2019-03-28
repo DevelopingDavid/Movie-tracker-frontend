@@ -9,7 +9,13 @@ export class Favorites extends Component {
 
   componentDidMount() {
     if (Object.keys(this.props.user).length > 0) {
-      this.fetchFavorites()
+      this.fetchFavorites();
+    } else if (Object.keys(this.props.user).length === 0) {
+      let user = JSON.parse(localStorage.getItem('movieTrackerUser'));
+      this.props.loginUser(user.id, user.name);
+      setTimeout(() => {
+        this.fetchFavorites();
+      }, 100)
     }
   }
 
@@ -17,17 +23,18 @@ export class Favorites extends Component {
     const favoritesURL = `http://localhost:3000/api/users/${this.props.user.id}/favorites`
     const response = await fetch(favoritesURL);
     const data = await response.json();
-    const movies = this.renderMovies(data.data)
-
-    if (this.props.fetchedMovies.length === 0) {
-      return this.props.addFavorites(movies)
-    }
+    return this.props.addFavorites(this.findFavorites(data.data));
   }
 
-  renderMovies = (movies) => {
-    return movies.map(movie => {
+  findFavorites = (movies) => {
+    let movieIds = movies.map(movie => movie.movie_id);
+    let foundMovies = this.props.movies.filter(movie => {
+      return movieIds.includes(movie.movie_id);
+    });
+    let allFavorites = foundMovies.map(movie => {
       return <Card cardInfo={movie} key={movie.movie_id}/>
     });
+    return allFavorites;
   }
 
   render() {
@@ -40,7 +47,6 @@ export class Favorites extends Component {
         return <Redirect to='/sign-in'/>;
       }
     }
-
     return (
       <section>
         {this.props.fetchedMovies}
@@ -52,7 +58,8 @@ export class Favorites extends Component {
 
 export const mapStateToProps = (state) => ({
   user: state.user,
-  fetchedMovies: state.fetchedMovies
+  fetchedMovies: state.fetchedMovies,
+  movies: state.movies
 })
 
 export const mapDispatchToProps = (dispatch) => ({
@@ -66,5 +73,6 @@ Favorites.propTypes = {
     user: PropTypes.object.isRequired,
     fetchedMovies: PropTypes.array.isRequired,
     loginUser: PropTypes.func.isRequired,
-    addFavorites: PropTypes.func.isRequired
+    addFavorites: PropTypes.func.isRequired,
+    movies: PropTypes.array.isRequired
 }

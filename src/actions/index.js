@@ -9,7 +9,7 @@ export const loginUser = (id, name) => ({
   name
 });
 
-export const setFavoriteMovies = (id) => ({
+export const setFavoriteMovie = (id) => ({
   type: 'FAVORITE_MOVIE',
   id
 });
