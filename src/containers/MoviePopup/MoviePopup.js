@@ -42,7 +42,6 @@ export class MoviePopup extends Component {
     }
     const response = await fetch(deleteURL, options);
     const data = await response.json();
-    console.log(data)
   }
 
   setFavorites = () => {
