@@ -5,6 +5,22 @@ This project was a week long paired project and created by David Cisneros and Jo
 
 ![giphy](https://user-images.githubusercontent.com/40274984/55083557-59ce6f00-5069-11e9-9dec-3bca035b4a62.gif)
 
+## Set-up when cloning this repository
+1) mkdir Movie-Tracker-Main
+### Installing the backend:
+2) In your browser, navigate to https://github.com/turingschool-examples/movie-tracker
+3) Follow repository instructions to download and install the backend
+4) Register for The Movie DB API Key (https://www.themoviedb.org/documentation/api)
+### Installing the frontend:
+4) cd Movie-Tracker-Main
+5) git clone git@github.com:DevelopingDavid/Movie-tracker-frontend.git
+6) cd Movie-tracker-frontend
+7) npm install
+8) npm start
+### Adding your The Movie DB API Key
+9) Navigate in your text editor to src/containers/App/App.js
+10) Add your api key to the empty string on line 14 
+
 ## Tech / Frameworks Used
 - ReactJS
 - Redux

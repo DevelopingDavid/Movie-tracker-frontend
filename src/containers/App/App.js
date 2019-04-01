@@ -11,6 +11,8 @@ import MoviePopup from '../MoviePopup/MoviePopup';
 import Favorites from '../Favorites/Favorites';
 import PropTypes from 'prop-types';
 
+export const apiKey = ``;
+
 export class App extends Component {
 
   componentDidMount() {
@@ -63,7 +65,6 @@ export class App extends Component {
     );
   }
 }
-
 
 export const mapStateToProps = (state) => ({
   user: state.user,
